@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bases html css js</title>
+    <!-- CDN bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Lien fichier css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CDN jquery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+</head>
+
+<body>
+
+    <div class="flexboxFormulaire">
+        <!--formulaire-->
+        <form method="post" action="#" id="form" class="formulaire">
+            <h5 class="titre">Formulaire d'inscription</h5>
+            <!--input pseudo-->
+            <p>
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name="pseudo" id="pseudo" />
+                <span id="aidePseudo"></span>
+            </p>
+
+            <!--input mot de passe-->
+            <p>
+                <label for="mdp">Mot de passe (entre 4 et 8 caractères)</label>
+                <input type="password" name="mdp" id="mdp" />
+                <span id="msgMdp"></span>
+            </p>
+
+            <!--input confirmation de mot de passe-->
+            <p>
+                <label for="mdp_verif">Vérification mot de passe</label>
+                <input type="password" name="mdp_verif" id="mdp_verif" />
+                <span id="msgMdp_verif"></span>
+            </p>
+
+            <!--input mail-->
+            <p>
+                <label for="mail">Adresse mail</label>
+                <input type="email" name="mail" id="mail" />
+                <span id="aideMail"></span>
+            </p>
+
+            <!--checkbox confirmation par mail-->
+            <p>
+                <input type="checkbox" name="confirmation" id="confirmation" />
+                <label for="confirmation">M'envoyer un mail de confirmation</label>
+            </p>
+
+            <!--boutons radio pour déterminer l'abonnement-->
+            <p>
+                <input type="radio" name="abonnement" id="abotout" value="abotout" />
+                <label for="abotout">M'abonner à tout</label>
+                <br/>
+                <input type="radio" name="abonnement" id="abonews" value="abonews" />
+                <label for="abonews">M'abonner uniquement à la newsletter</label>
+                <br/>
+                <input type="radio" name="abonnement" id="rien" value="rien" />
+                <label for="rien">Ne pas m'abonner</label>
+                <br/>
+            </p>
+
+            <!--liste déroulante-->
+            <p>
+                <label for="nationalite">Nationalité</label>
+                <select name="nationalite" id="nationalite">
+                    <option value="fr" selected>Française</option>
+                    <option value="es">Espagnole</option>
+                    <option value="it">Italienne</option>
+                </select>
+            </p>
+
+            <!--boutons envoyer et annuler-->
+            <input type="submit" class="btn btn-primary" value="Envoyer" onclick="btnSubmit()" />
+            <input type="reset" value="Annuler" />
+
+        </form>
+    </div>
+
+    <hr>
+
+    <!--Résumé de la saisie du formulaire-->
+    <h5>Résumé du formulaire</h5>
+    <div id="result">
+        <p id="resume"></p>
+        <p id="confirmationMail"></p>
+        <p id="abonnement"></p>
+        <p id="nation"></p>
+    </div>
+
+    <hr>
+
+    <h5>Changer le texte sans AJAX :</h5>
+    <p id="changement">Révisions<button id="changer">changer</button></p>
+
+    <hr>
+
+    <h5>Changer le texte sans AJAX :</h5>
+    <p>Windows : Pour faire fonctionner Xampp, remplacer "file:///C:/xampp/htdocs" par <strong>"localhost"</strong>.</p>
+    <p>Mac : utiliser MAMP</p>
+    <p id="fichier1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus saepe laboriosam id! Sequi nemo hic vel neque unde excepturi quae culpa facilis? Quasi consectetur architecto ullam iusto. Laudantium, sint incidunt.</p>
+    <button id="button1">Changer le texte</button>
+
+    <hr>
+
+    <form method="post" action="#" id="nombre">
+        <p>
+            <label for="nb">Entrez un nombre entre 1 et 10 : </label>
+            <input type="number" min="1" max="10" name="nombre" id="nb">
+            <button type="button" id="test">Valider</button>
+            <p id="msg"></p>
+        </p>
+    </form>
+
+    <hr>
+
+    <form id="requestCat" class="well well-sm">
+        <div class="form-group">
+            <label for="choice">Choix du chat :</label>
+            <select id="choice" name="choice" class="form-control input-sm">
+                <option value="">-- Sélectionnez --</option>
+                <option value="Sushi">Sushi</option>
+                <option value="Maki">Maki</option>
+                <option value="Sashimi">Sashimi</option>
+                <option value="Yakitori">Yakitori</option>
+                <option value="Onigri">Onigri</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="reason">Raison d'adoption :</label>
+            <textarea id="reason" name="reason" class="form-control" rows="10" placeholder="Saisissez ici les raisons pour lesquelles vous souhaitez adopter ce chat..."></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success btn-block" value="Envoyer">
+        </div>
+    </form>
+
+    <hr>
+
+    <p id="para">Ceci est un paragraphe</p>
+
+    <hr>
+
+    <p id="ouv">Ouverture fenêtre</p>
+    <button id="ouvrir">Ouvrir</button>
+    <button id="fermer">Fermer</button>
+    <p id="taille"></p>
+
+    <hr>
+
+
+
+
+    <!-- 3 scripts bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- CDN jqueryUI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Lien fichier js -->
+    <script src="js/script.js "></script>
+    <!-- CDN fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</body>
+
+</html>

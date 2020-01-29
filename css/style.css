@@ -1,0 +1,15 @@
+.titre {
+    color: blue;
+}
+
+.flexboxFormulaire {
+    height: 85vh;
+    display: flex;
+}
+
+.formulaire {
+    margin: auto;
+}
+
+
+/*# sourceMappingURL=style.css.map */
